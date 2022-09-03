@@ -16,7 +16,7 @@ from rest_framework.decorators import action
 from rest_framework import generics
 
 from products.serializers import FileUploadSerializer, ProductSerializer
-from products.models import Product
+from products.models import Product, Category
 
 
 class ProductList(generics.ListAPIView):
@@ -39,13 +39,15 @@ class UploadfileView(generics.CreateAPIView):
         file = serializer.validated_data['file']
         reader = pd.read_csv(file)
         for _, row in reader.iterrows():
+            # category_tree = (json.loads(row['product_category_tree'])[0]).split(">>")
+            # c = Category.objects.filter(name=category_tree[-2])
             product = Product(
                 name=row['product_name'],
                 brand=row['brand'],
                 retail_price=int(row['retail_price']),
                 price=int(row['discounted_price']),
                 description=row['description'],
-                image=json.loads(row['image'])
+                image=json.loads(row['image']),
             )
             product.save()
         
