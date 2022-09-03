@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from auth.models import MyUser
+from users.models import MyUser
 
 
 class RegistrationSerializer(serializers.ModelSerializer):

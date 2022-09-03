@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from .utils import get_tokens_for_user
 # from users.models import RefreshToken
 
-from auth.serializers import RegistrationSerializer
+from users.serializers import RegistrationSerializer
 
 
 
