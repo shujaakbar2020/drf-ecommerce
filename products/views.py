@@ -19,16 +19,14 @@ from products.serializers import FileUploadSerializer, ProductSerializer
 from products.models import Product
 
 
-class ProductList(generics.ListCreateAPIView):
+class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = [IsAuthenticated]
 
-
-class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+# RetrieveUpdateDestroyAPIView
+class ProductDetail(generics.RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = [IsAuthenticated]
 
 
 class UploadfileView(generics.CreateAPIView):
@@ -47,7 +45,7 @@ class UploadfileView(generics.CreateAPIView):
                 retail_price=int(row['retail_price']),
                 price=int(row['discounted_price']),
                 description=row['description'],
-                image=json.loads(row['image'])[0]
+                image=json.loads(row['image'])
             )
             product.save()
         

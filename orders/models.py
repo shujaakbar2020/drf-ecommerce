@@ -1,7 +1,6 @@
 from django.conf import settings
 from decimal import Decimal
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
 
 from users.models import MyUser
 from products.models import Product

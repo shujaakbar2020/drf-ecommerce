@@ -1,5 +1,6 @@
 from distutils.archive_util import make_zipfile
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class Product(models.Model):
@@ -8,7 +9,7 @@ class Product(models.Model):
     retail_price = models.IntegerField()
     price = models.IntegerField()
     description = models.CharField(max_length=9999)
-    image = models.URLField(blank=True)
+    image = ArrayField(models.URLField(blank=True))
 
     def __str__(self):
         return self.name
