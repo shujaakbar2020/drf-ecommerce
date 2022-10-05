@@ -1,0 +1,1 @@
+web: gunicorn shop-by-shuja.wsgi
