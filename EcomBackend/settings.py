@@ -95,10 +95,15 @@ WSGI_APPLICATION = 'EcomBackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd71gq3vghv111r',
+        'USER': 'uhnmdobzcmyicj',
+        'PASSWORD': 'e6a492c52f6f30e8ac2083d0d3b3ff92f428b9266474c0a9adbd7cffbc482e99',
+        'HOST': 'ec2-34-235-198-25.compute-1.amazonaws.com',
+        'PORT': 5432
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -167,13 +172,13 @@ CORS_ALLOW_CREDENTIALS = True
 
 import os
 
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
+# PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+# STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'static'),
+# )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 import dj_database_url 
