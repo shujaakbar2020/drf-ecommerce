@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-msxs#izz6_oar%mnl8d-t_&9ro!3*3dl2m$^ng)q8rpwtd40ao
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://shop-by-shuja.herokuapp.com']
+ALLOWED_HOSTS = ['shop-by-shuja.herokuapp.com']
 
 
 # Application definition
