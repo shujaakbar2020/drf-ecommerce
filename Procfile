@@ -1,1 +1,1 @@
-web: gunicorn shop-by-shuja.wsgi
+web: gunicorn EcomBackend.wsgi
